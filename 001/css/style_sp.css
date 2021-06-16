@@ -1,0 +1,272 @@
+@charset "utf-8";
+/*-----------------*/
+/*--- page_wrap ---*/
+/*-----------------*/
+.page_wrap{
+overflow: hidden;
+}
+/*--------------*/
+/*--- header ---*/
+/*--------------*/
+.header {
+    height: 5.5rem;
+}
+.header .inner{
+    padding: 0 2.0rem;
+    height: 100%;
+}
+
+/*--- menu close ---*/
+.header .sp_menu{
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    width: 2.5rem;
+    box-sizing: border-box;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+.header .sp_menu:before{
+    content:"";
+    display: block;
+    height: 1px;
+    background: #333;
+    width: 100%;
+}
+
+/*--- menu open ---*/
+.header .sp_menu.open{
+    border-top:none;
+    border-bottom:none;
+    flex-direction: column;
+    height:3rem;
+}
+.header .sp_menu.open:before{
+    transform: rotate(135deg);
+    position: absolute;
+    top: 50%; 
+}
+.header .sp_menu.open:after{
+    content: "";
+    display: block;
+    height: 1px;
+    background: #333;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: rotate(-135deg);
+}
+
+
+.header .menu_list{
+    position: absolute;
+    background: #595959;
+    top: 6.5rem;
+    z-index: 1;
+    width: 100%;
+    z-index: 20;
+    flex-direction: column;
+    right: -150%;
+    transition: all 0.4s;
+}
+/*
+.header .menu_list .menu-item{
+    display: none;
+}*/
+.header .menu_list .menu-item + .menu-item{
+border-top: #999999 solid 1px;
+} 
+.header .menu_list .menu-item a{
+    color: #fff;
+    padding: 1rem 1.2rem;
+    transition: all 0.5s;
+    display: block;
+    box-sizing: border-box;
+}
+
+.header .sp_menu.open+ .menu_list {
+    top: 6.5rem;
+    right: -70%;
+}
+
+
+/*--------------*/
+/*--- footer ---*/
+/*--------------*/
+.footer{
+    padding: 0.0rem 0 4.0rem 0;
+}
+/*----------------*/
+/*--- site_ttl ---*/
+/*----------------*/
+.site_ttl{
+    font-size: 4.0rem;
+    padding: 0 0.5rem;
+}
+
+/*---------------*/
+/*--- content ---*/
+/*---------------*/
+.page_wrap > .content{
+    margin-top:6.5rem; 
+}
+
+/*-----------*/
+/*--- sec ---*/
+/*-----------*/
+.sec .inner{
+    padding: 4rem 2.0rem;
+    box-sizing: border-box; 
+}
+
+/*--- sec_front ---*/
+.sec_front .inner{
+    padding: 0;
+}
+.sec_front .main p{
+    text-align: center;
+}
+@media screen and (max-width:425px) {
+    .sec_front .main_slider_list img{
+        height: 40rem;
+    }
+}
+
+/*--- sec_service ---*/
+.sec_service .service_list{
+    flex-direction: column;
+}
+.sec_service .service_list .list-item{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.sec_service .service_list .list-item + .list-item{
+    margin: 2.0rem 0 0 0;
+}
+
+/*--- sec_about ---*/
+.sec_about .column{
+    margin: 2.0rem 0;
+}
+.sec_about .column img{
+    margin:0  auto 4.0rem;
+}
+.sec_about .column {
+    flex-direction: column;
+}
+.sec_about .column + .column {
+    margin: 2.0rem 0;
+}
+.sec_about .column .column-item{
+    width: 100%;
+    padding: 0;
+} 
+.sec_about .column .about_list{
+    margin: 0 0 2.0rem 0;
+}
+.sec_about .column .sec_sub_ttl{
+   text-align:center;
+   line-height: 1.5
+}
+.sec_about .column .about_list .list-item + .list-item{
+    margin-top: 1.0rem;     
+}
+
+/*----------------*/
+/*--- sec_team ---*/
+/*----------------*/
+.sec_team .sec_phrase{
+    padding: 4.0rem 2.0rem;
+    font-size: 2.8rem; 
+}
+.sec_team .member_list{
+    flex-direction: column;
+    margin: 2.0rem 0 0 0;
+}
+.sec_team .member_list > .list-item{
+    margin :0;
+}
+.sec_team .member_list >.list-item + .list-item{
+    margin: 4.0rem 0 0 0;
+}
+
+.sec_team .member_list .list-item .feature{
+    padding: 1.5rem 1.5rem 2.5rem;
+    text-align: center;
+}
+
+
+/*--- sec_voice ---*/
+.sec_voice .voice_list{
+    margin: 2.0rem 0 0 0;
+}
+.sec_voice .voice_list .list-item{
+   display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.sec_voice .voice_list .list-item .thumbnail {
+    margin: 0 1.0rem 0 0;
+}
+.sec_voice .voice_list .list-item .thumbnail img{
+    width:60px;
+    height:60px;
+}
+.sec_voice .voice_list .list-item .comment{
+    font-size: 1.6rem;
+    flex: 1;
+}
+.sec_voice .voice_list .list-item .comment .name{
+    margin: 0.5rem 0 0 0;
+    font-size: 1.4rem;
+}
+/*--- sec_price ---*/
+.sec_price .plan{
+    flex-direction: column;
+    margin:2.0rem 0 0 0;
+}
+.sec_price .plan .plan-item{
+    width: 100%;
+    margin:0;
+}
+.sec_price .plan .plan-item + .plan-item{
+    margin:4.0rem 0 0 0;
+}
+
+/*--- sec_contact ---*/
+
+.sec_contact .column{
+    flex-direction: column;
+    margin: 2.0rem 0 0 0;
+}
+.sec_contact .column .column-item{
+    width: 100%;
+    text-align:center;
+}
+.sec_contact .column .column-item + .column-item{
+    margin: 6.0rem 0 0 0;
+}
+.sec_contact .from_area .btn{
+    width: 100%;
+    margin: 0;
+}
+.sec_contact .info_list{
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+}
+.sec_contact .info_list .list-item + .list-item{
+    margin: 0.5rem 0 0 0;
+}
+.sec_contact .sns_list{
+    justify-content: center
+}
+.sec_contact .sns_list .list-item{
+    width: 4.2rem;
+    height: 4.2rem;
+}
+.sec_contact .sns_list .list-item + .list-item{
+    margin:0 0 0 1.0rem;
+}
+
